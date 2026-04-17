@@ -1,0 +1,25 @@
+# Submission-focused allowlist based on challenge Submission Requirements.
+# Ignore everything by default, then explicitly keep required items.
+*
+
+# Keep this ignore file and required root files
+!.gitignore
+!README.md
+!requirements.txt
+!prediction.csv
+!model.joblib
+!report.pdf
+
+# Keep required solution code and optional notebooks
+!src/
+!src/**
+!notebooks/
+!notebooks/**
+
+# Keep Python package markers when present
+!**/__init__.py
+
+# Re-ignore generated/cache files inside kept trees
+src/**/__pycache__/
+src/**/*.py[cod]
+notebooks/**/.ipynb_checkpoints/
