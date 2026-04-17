@@ -8,7 +8,6 @@
 !requirements.txt
 !prediction.csv
 !model.joblib
-!report.pdf
 
 # Keep required solution code and optional notebooks
 !src/
