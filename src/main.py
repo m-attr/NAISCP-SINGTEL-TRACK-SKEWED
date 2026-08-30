@@ -5,8 +5,8 @@ CLI_WALL_START = time.perf_counter()
 import argparse
 import sys
 
-from pipeline_orchestrator import run_pipeline
-from utils import format_ascii_table, format_phase_box
+from common.console import format_ascii_table, format_phase_box
+from pipeline.orchestrator import run_pipeline
 
 
 def print_outputs(phase: dict) -> None:
@@ -45,6 +45,8 @@ def main():
         print("", file=sys.__stdout__)
         print(format_phase_box("Pipeline Error"), file=sys.__stdout__)
         print(err, file=sys.__stdout__)
+        sys.__stdout__.flush()
+        raise SystemExit(1)
     cli_elapsed = time.perf_counter() - CLI_WALL_START
     print("", file=sys.__stdout__)
     print(format_phase_box("CLI Wall Clock"), file=sys.__stdout__)

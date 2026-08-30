@@ -1,24 +1,37 @@
-# Submission-focused allowlist based on challenge Submission Requirements.
-# Ignore everything by default, then explicitly keep required items.
-*
+# Python environments and caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# Keep this ignore file and required root files
-!.gitignore
-!README.md
-!requirements.txt
-!prediction.csv
-!model.joblib
+# Editors and local tooling
+.vscode/
+.idea/
 
-# Keep required solution code and optional notebooks
-!src/
-!src/**
-!notebooks/
-!notebooks/**
+# Competition and generated data
+*.csv
+*.parquet
+*.feather
+*.joblib
+.parquet_cache/
+prediction*.csv
+latest_metrics*.json
+drift_report.json
+preparation_plan.json
+external_evaluation.json
+dashboard_artifacts/
 
-# Keep Python package markers when present
-!**/__init__.py
+# Large/generated evidence belongs in DataDrift-Agent-Logs
+Task*_Source.zip
+Task*_Report.md
+*.log
 
-# Re-ignore generated/cache files inside kept trees
-src/**/__pycache__/
-src/**/*.py[cod]
-notebooks/**/.ipynb_checkpoints/
+# Notebook checkpoints and platform files
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
